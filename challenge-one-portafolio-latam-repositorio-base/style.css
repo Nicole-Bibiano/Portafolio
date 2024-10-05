@@ -2,9 +2,15 @@
 */
 :root {
     --color-de-fondo: #F5F5F5;
-    --color-de-fondo-menu: #ffffff;
-    --color-de-link: #000000;
-}
+    --color-de-link: #000000;            /* Color de los enlaces */
+    --color-menu: #bebebe;             /* Color blanco */
+    --gris-claro: #8b8b8b;               /* Gris claro */
+    --gris-medio: #686868;               /* Gris medio */
+    --gris-oscuro: #464646;              /* Gris oscuro */
+    --gris-muy-oscuro: #232323;          /* Gris muy oscuro */
+    --negro: #000000;                    /* Negro */
+
+    }
 
 body {
     background-color: var(--color-de-fondo);
@@ -13,6 +19,13 @@ body {
     box-sizing: border-box;
     padding: 0;
     line-height: 1.6;
+    display: flex;
+    box-sizing: border-box;
+    line-height: 1.6;
+    height: 100vh; /* Altura completa del viewport */
+    display: flex; /* Para el diseño flexible */
+    margin-left: 15em;
+    margin-top: 6rem;
 }
 
 ol, ul, li {
@@ -26,85 +39,360 @@ a {
 
 /* ------------------------------ Sección Menú -------------------------------*/
 .cabecera {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    overflow-x: hidden;
+    padding: 2em 1.5em 0em 0em; 
+    align-items: flex-start;
     padding: 1rem;
-    background-color: var(--color-de-fondo-menu);
+    background-color: var(--negro);
+    box-shadow: 2px 0 5px rgb(219, 219, 219);
+    position: fixed;
+    width: 11%; /* Ancho fijo para la cabecera */
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;    
 }
 
 .cabecera__logo {
-    max-width: 80px; /* Ajuste para pantallas pequeñas */
+    max-width: 80px;
+    margin-bottom: 2rem;
+    margin-left: 11rem;
 }
 
 .cabecera__titulo {
-    font-size: 1.2rem;
+    font-size: 2rem;
+    margin-bottom: 10rem;
     text-align: center;
+    color: var(--color-menu);
+
 }
 
 .navegacion__lista {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.navegacion__elemento {
+    color: var(--color-menu);
+    display: block;
+    padding: 1rem;
+    transition: background 0.3s ease;
+    text-align: center;
+    font-weight: bold;
 }
 
 .navegacion__elemento a {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+    color: var(--color-menu);
+    text-decoration: none;
+    display: block; /* Para que el área del enlace ocupe todo el espacio */
+    padding: 0.75rem 1rem; /* Agranda el área de selección del botón */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto de transición */
+    border-radius: 8px; /* Bordes redondeados para un estilo más agradable */
 }
+
+/* Efecto hover para los enlaces */
+.navegacion__elemento a:hover {
+    background-color: var(--gris-muy-oscuro);
+    transform: scale(1.05); /* Amplía ligeramente el botón al hacer hover */
+}
+
+/* ------------------------------ CONTENIDO COMPLETO ------------------------------*/
+.contenedor {
+    padding: 2rem;
+}
+
+
 /* ------------------------------ Sección Presentación ------------------------------*/
+.presentacion{
+text-align: center;
+}
+
+.presentacion__foto{
+
+
+}
+
+.presentacion__contenedor{
+
+}
+.presentacion__titulo{
+
+}
+
+.redes__img{
+    font-size: 1.2rem;
+    padding: 10px 30px; /* Espaciado interno del botón */
+    border-radius: 24px; /* Bordes redondeados */
+    background-color: var(--gris-claro); /* Color de fondo */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    font-weight: bold; /* Texto en negrita */
+    text-align: center; /* Centra el texto */
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
+}
+
+.redes__img:hover {
+    transform: scale(1.05); /* Escala el botón al pasar el mouse */
+}
+
+.redes{
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+    display: inline-flex;
+}
+
+.redes__icono{
+    display: flex;
+    width: 20px; /* Ajusta el tamaño del icono */
+    height: 20px; /* Ajusta el tamaño del icono */
+    display: inline-block;
+}
+
 
 
 /* ------------------------------ Sección sobre mí ----------------------------------*/
-
+.sobre-mi{
+text-align: left;
+background-color: var(--color-menu);
+padding: 50px;
+}
 
 /*------------------------------ Sección de Habilidades ------------------------------*/
+.habilidades__titulo{
+    padding: 50px;
+    text-align: center;
+}
+
+.habilidades__lista{
+    display: flex;
+    width: auto;
+    justify-content: space-around;
+    padding: 50px;
+}
+
+.habilidades__icono{
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+}
+
+.habilidades__elemento{
+    background-color: var(--gris-claro);
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.habilidades__elemento p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--color-de-link);
+    text-align: center;
+}
 
 
 /*------------------------------ Sección de Aficiones --------------------------------*/
+.aficiones__titulo{
+    padding: 50px;
+    text-align: center;
+}
 
+.aficiones__lista{
+    display: flex;
+    width: auto;
+    justify-content: space-around;
+    padding: 50px;
+}
+
+.aficiones__icono{
+    width: 60px; /* Ajusta el tamaño del icono */
+    height: 60px; /* Ajusta el tamaño del icono */
+}
+
+.aficiones__elemento{
+    background-color: var(--gris-claro);
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.aficiones__elemento p{
+    margin: 0;
+    font-size: 16px;
+    color: var(--color-de-link);
+    text-align: center;
+}
+
+/*------------------------------ Sección de formacion --------------------------------*/
+.formacion{
+    background-color: var(--color-menu);
+    height: 45rem;
+}
+.formacion__titulo{
+    padding: 50px;
+    text-align: center;
+}
+
+.formacion__lista{
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    gap: 5rem;
+}
+
+.formacion__elemento{
+    margin: 0;
+    font-size: 16px;
+    color: var(--color-de-link);
+    text-align: center; 
+    background-color: white;
+    width: 25rem;
+    height: 25rem;
+    align-items: center;
+    align-content: center;
+}
+
+.formacion__icono{
+    margin: 10px;
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+}
 
 /*------------------------------ Sección de Proyectos --------------------------------*/
+.proyectos__titulo{
+    padding: 50px;
+    text-align: center;
+}
 
+.proyectos__contenedor{
+    padding: 50px;
+    justify-content: center; /* Centra horizontalmente los elementos */
+    display: flex; /* Usar flexbox para alinear elementos */
+    align-items: center; /* Centrar verticalmente los elementos */
+    margin-bottom: 20px; /* Espacio entre proyectos */
+}
+
+.proyecto__icono{
+    width: 800px; /* Ajusta el tamaño del icono */
+    height: auto; /* Ajusta el tamaño del icono */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+.proyecto__info {
+    display: flex;
+    flex-direction: column; /* Alinear elementos en columna */
+}
+
+.proyectos__nombre {
+    margin-bottom: 5px; /* Ajusta este valor según lo necesites */
+}
+
+.proyectos__descripcion {
+    margin-top: 5px;
+    margin-bottom: 10px; /* Ajusta este valor según lo necesites */
+}
+
+.proyecto__botones{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.proyecto__boton__repositorio, 
+.proyecto__boton__demo {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid var(--gris-muy-oscuro);
+    background-color: #fff; 
+    color: var(--gris-claro);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    font-weight: 500;
+    margin-right: 10px;
+    text-decoration: none; /* Quitar el subrayado de los enlaces */
+    display: inline-block; /* Para que el enlace se comporte como botón */
+}
+
+.proyecto__boton__demo {
+    background-color:var(--gris-medio); 
+    color: var(--color-de-fondo);
+}
+
+.proyecto__boton__repositorio:hover, 
+.proyecto__boton__demo:hover {
+    background-color: var(--gris-muy-oscuro);
+    color: var(--color-de-fondo);
+}
 
 /*------------------------------ Sección de Contacto ---------------------------------*/
+.contacto{
+    padding: 50px;
+    background-color: var(--gris-claro);
+    text-align: center;
+}
 
+.contacto__titulo {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.contacto__contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contacto__formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto__campo {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contacto__campo--textarea {
+    height: 100px;
+}
+
+.contacto__boton {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contacto__boton:hover {
+    background-color: #555;
+}
 
 /* ------------------------------ Responsividad ---------------------------------------*/
 
 /* Tablets y pantallas más grandes */
-@media (min-width: 768px) {
-    .cabecera {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .cabecera__logo {
-        max-width: 100px;
-    }
-
-    .cabecera__titulo {
-        font-size: 1.5rem;
-    }
-
-    .navegacion__lista {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        margin-top: 0;
-    }
-
-    .navegacion__elemento a {
-        font-size: 1rem;
-    }
-}
-
-/* Pantallas grandes */
-@media (min-width: 1024px) {
-    /* Aquí puedes ajustar aún más el diseño para pantallas grandes */
-    .cabecera__titulo {
-        font-size: 1.8rem;
-    }
-
-    .navegacion__elemento a {
-        font-size: 1.1rem;
-    }
-}
