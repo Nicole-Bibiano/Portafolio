@@ -33,7 +33,7 @@
     <main class="contenido">
     <!-- Sección de Presentación -->
     <section class="presentacion">
-        <img class="presentacion__foto" src="assets/profile.png" alt="Foto de perfil">
+        <img class="presentacion__foto" src="assets/foto-personal.png" alt="Foto de perfil">
         <div class="presentacion__contenedor">
             <h2 class="presentacion__titulo">Hola, mi nombre es Nicole.</h2>
             <h3 class="presentacion__titulo2">Ingeniera en Sistemas Computacionales</h2>
@@ -114,24 +114,24 @@
         <h2 class="formacion__titulo">Formación académica</h2>
         <ul class="formacion__lista">
             <li class="formacion__elemento">
-                <img class="formacion__icono" src="assets/ufpr_logo.png" alt="UFPR">
+                <img class="formacion__icono" src="assets/logo_tec.png" alt="UFPR">
                 <div>
-                    <h3 class="formacion__nombre">Análisis de datos</h3>
-                    <p class="formacion__detalle">2018 - UFPR</p>
+                    <h3 class="formacion__nombre">Ingenieria en Sistemas</h3>
+                    <p class="formacion__detalle">2023 - ITCHII</p>
                 </div>
             </li>
             <li class="formacion__elemento">
                 <img class="formacion__icono" src="assets/alura_logo.png" alt="Alura">
                 <div>
-                    <h3 class="formacion__nombre">Formación en UX Design</h3>
-                    <p class="formacion__detalle">2019 - Alura</p>
+                    <h3 class="formacion__nombre">Formación en Front-End</h3>
+                    <p class="formacion__detalle">2024 - Alura</p>
                 </div>
             </li>
             <li class="formacion__elemento">
-                <img class="formacion__icono" src="assets/ufrj_logo.png" alt="UFRJ">
+                <img class="formacion__icono" src="" alt="Sin imagen">
                 <div>
-                    <h3 class="formacion__nombre">Posgrado en diseño</h3>
-                    <p class="formacion__detalle">En curso - UFRJ</p>
+                    <h3 class="formacion__nombre">...</h3>
+                    <p class="formacion__detalle">...</p>
                 </div>
             </li>
         </ul>
@@ -168,14 +168,37 @@
 
     <!-- Sección de Contacto -->
     <section class="contacto" id="contacto">
-        
-        <form class="contacto__formulario"></form>
-        <h2 class="contacto__titulo">Contacto</h2> 
-            <input class="contacto__campo" type="text" placeholder="Nombre">
-            <input class="contacto__campo" type="email" placeholder="Correo Electrónico">
-            <textarea class="contacto__campo contacto__campo--textarea" placeholder="Mensaje"></textarea>
-            <button class="contacto__boton" type="submit">Enviar</button>
-        </form>
+        <div class="contacto__contenedor">
+            <!-- Imagen a la izquierda -->
+            <div class="contacto__imagen">
+                <img src="assets/mensaje.png" alt="Imagen de contacto">
+            </div>
+    
+            <!-- Formulario a la derecha -->
+            <div class="contacto__formulario-contenedor">
+                <h2 class="contacto__titulo">Contacto</h2>
+                <p class="contacto__subtitulo">¿Quieres contactarme? Complete el siguiente formulario y me pondré en contacto con usted lo antes posible.</p>
+                <form class="contacto__formulario">
+                    <div class="contacto__grupo">
+                        <input class="contacto__campo" type="text" id="nombre" required>
+                        <label for="nombre" class="contacto__label">Nombre</label>
+                    </div>
+                    <div class="contacto__grupo">
+                        <input class="contacto__campo" type="email" id="email" required>
+                        <label for="email" class="contacto__label">E-mail</label>
+                    </div>
+                    <div class="contacto__grupo">
+                        <input class="contacto__campo" type="text" id="asunto"  required>
+                        <label for="asunto" class="contacto__label">Asunto</label>
+                    </div>
+                    <div class="contacto__grupo">
+                        <textarea class="contacto__campo contacto__campo--textarea" id="mensaje" required></textarea>
+                        <label for="mensaje" class="contacto__label">Mensaje</label>
+                    </div>
+                    <button class="contacto__boton" type="submit">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
     </section>
     </main>
 
