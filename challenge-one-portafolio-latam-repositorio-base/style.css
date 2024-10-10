@@ -294,22 +294,22 @@ width: 28%;
 }
 
 .proyecto__icono{
-    width: 800px; /* Ajusta el tamaño del icono */
-    height: auto; /* Ajusta el tamaño del icono */
-    margin-right: 20px; /* Espacio entre la imagen y el texto */
+    width: 800px; 
+    height: auto; 
+    margin-right: 20px; 
 }
 .proyecto__info {
     display: flex;
-    flex-direction: column; /* Alinear elementos en columna */
+    flex-direction: column; 
 }
 
 .proyectos__nombre {
-    margin-bottom: 5px; /* Ajusta este valor según lo necesites */
+    margin-bottom: 5px; 
 }
 
 .proyectos__descripcion {
     margin-top: 5px;
-    margin-bottom: 10px; /* Ajusta este valor según lo necesites */
+    margin-bottom: 10px; 
 }
 
 .proyecto__botones{
@@ -331,8 +331,8 @@ width: 28%;
     font-family: 'Arial', sans-serif;
     font-weight: 500;
     margin-right: 10px;
-    text-decoration: none; /* Quitar el subrayado de los enlaces */
-    display: inline-block; /* Para que el enlace se comporte como botón */
+    text-decoration: none; 
+    display: inline-block; 
 }
 
 .proyecto__boton__demo {
@@ -354,12 +354,12 @@ width: 28%;
 
 .contacto__contenedor {
     display: flex;
-    justify-content: space-around; /* Cambié a space-around para equilibrar mejor el espacio */
+    justify-content: space-around; 
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     background-color: white;
-    padding: 40px; /* Aumenté el padding para darle más aire */
+    padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -374,7 +374,7 @@ width: 28%;
 
 .contacto__formulario-contenedor {
     flex: 1;
-    margin-left: 40px; /* Aumenté el margen para dar más espacio entre la imagen y el formulario */
+    margin-left: 40px;
 }
 
 
@@ -455,7 +455,6 @@ width: 28%;
 }
 
 /* ------------------------------ Responsividad ---------------------------------------*/
-
 /* Tablets y pantallas más grandes */
 /* Para pantallas pequeñas (móviles en modo vertical) */
 @media (max-width: 768px) {
@@ -606,15 +605,15 @@ width: 28%;
         max-width: 85%;
     }
     .habilidades__lista, .aficiones__lista {
-        flex-direction: column; /* Organiza en columna en lugar de fila */
-        align-items: center; /* Centra los elementos */
+        flex-direction: column; 
+        align-items: center; 
         align-content: center;
         width: auto;
         
     }
 
     .habilidades__elemento, .aficiones__elemento, .formacion__elemento {
-        width: 100%; /* Elementos ocupan todo el ancho */
+        width: 100%;
         margin-bottom: 1rem;
     }
 
