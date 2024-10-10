@@ -21,10 +21,12 @@ body {
     display: flex;
     box-sizing: border-box;
     line-height: 1.6;
-    height: 100vh;
+    height: 100%;
     display: flex;
     margin-left: 17.3em;
     margin-top: 6rem;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 ol, ul, li {
@@ -100,12 +102,6 @@ a {
     background-color: var(--gris-muy-oscuro);
     transform: scale(1.05); /* Amplía ligeramente el botón al hacer hover */
 }
-
-/* ------------------------------ CONTENIDO COMPLETO ------------------------------*/
-.contenedor {
-    max-width: 80vw;
-}
-
 
 /* ------------------------------ Sección Presentación ------------------------------*/
 .presentacion{
@@ -239,6 +235,11 @@ width: 28%;
 .formacion{
     background-color: var(--color-menu);
     height: 45rem;
+    max-width: 100%; 
+    margin: 0 auto; 
+    padding: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 .formacion__titulo{
     padding: 50px;
@@ -247,23 +248,25 @@ width: 28%;
 
 .formacion__lista{
     display: flex;
-    justify-content: center;
-    align-content: center;
     margin: auto;
-    gap: 5rem;
+    gap: 5rem; 
+    justify-content: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .formacion__elemento{
-    margin: 0;
+    flex: 1 1 300px;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
     font-size: 16px;
     color: var(--color-de-link);
     text-align: center; 
     background-color: white;
     width: 25rem;
     height: 25rem;
-    align-items: center;
-    align-content: center;
-    
 }
 
 .formacion__icono{
@@ -283,10 +286,11 @@ width: 28%;
 
 .proyectos__contenedor{
     padding: 50px;
-    justify-content: center; /* Centra horizontalmente los elementos */
-    display: flex; /* Usar flexbox para alinear elementos */
-    align-items: center; /* Centrar verticalmente los elementos */
-    margin-bottom: 20px; /* Espacio entre proyectos */
+    justify-content: center; 
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px; 
 }
 
 .proyecto__icono{
@@ -489,22 +493,60 @@ width: 28%;
         font-size: 1rem; 
     }
 
-    .sobre-mi, .habilidades__titulo, .aficiones__titulo, .formacion__titulo, .proyectos__titulo, .contacto__titulo {
+    .sobre-mi, .habilidades__titulo, .aficiones__titulo, .formacion__titulo, .contacto__titulo {
         padding: 50px;
         justify-content: center;
         align-items: center;
     }
 
-    .habilidades__lista, .aficiones__lista, .formacion__lista, .proyectos__contenedor {
-        flex-direction: column;
+    .sobre-mi{
+        width: 100%;
+        
+    }
+    .habilidades__lista, .aficiones__lista {
         padding: 30px;
         justify-content: center;
         align-items: center;
     }
 
-    .habilidades__elemento, .aficiones__elemento, .formacion__elemento {
+    .habilidades__elemento, .aficiones__elemento {
         width: 100%;
         margin-bottom: 1rem;
+    }
+
+
+    .formacion{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .formacion__lista{
+        display: flex;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .formacion__elemento{
+        max-width: 100%;
+        height: auto; 
+        margin: 0 auto; 
+    }
+
+
+    .proyectos__contenedor {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    
+    .proyecto__botones {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+        padding-bottom: 5%;
     }
 
     .proyecto__icono {
@@ -514,7 +556,7 @@ width: 28%;
 
     .contacto__contenedor {
         flex-direction: column; 
-        padding: 20px;
+        padding: 50px;
     }
 
     .contacto__formulario-contenedor {
@@ -526,17 +568,49 @@ width: 28%;
 /* Para pantallas medianas (tabletas y pequeñas laptops) */
 @media (max-width: 1024px) {
 
+    body{
+        max-width: 100%;
+        padding-left: 0%;
+        margin: 0em;
+    }
     .cabecera {
         display: none;
     }
 
-    .presentacion__foto {
-        width: 50%; /* Ajusta el tamaño de la imagen */
+    .cabecera__logo{
+        width: 70%;
     }
 
-    .habilidades__lista, .aficiones__lista, .formacion__lista {
+    .presentacion{
+        max-width: 100%;
+    }
+    .presentacion__foto {
+        width: 30%;   
+    }
+
+    .redes {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .redes__img {
+        padding: 10px 20px;
+        font-size: 1rem; 
+    }
+
+    .sobre-mi{
+        align-items: center;
+        display: flex; 
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-width: 85%;
+    }
+    .habilidades__lista, .aficiones__lista {
         flex-direction: column; /* Organiza en columna en lugar de fila */
         align-items: center; /* Centra los elementos */
+        align-content: center;
+        width: auto;
+        
     }
 
     .habilidades__elemento, .aficiones__elemento, .formacion__elemento {
@@ -544,16 +618,31 @@ width: 28%;
         margin-bottom: 1rem;
     }
 
+    .formacion{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .formacion__lista{
+        display: flex;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .formacion__elemento{
+        max-width: 100%;
+        height: auto; 
+        margin: 0 auto; 
+    }
+
     .proyecto__icono {
-        width: 90%; /* Reduce el tamaño de los iconos de proyectos */
+        width: 60%; 
     }
 
     .contacto__contenedor {
-        flex-direction: column; /* Organiza el formulario de contacto en columna */
+        flex-direction: column; 
         align-items: center;
-    }
-
-    .contacto__formulario-contenedor {
-        margin-left: 0;
     }
 }
